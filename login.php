@@ -8,10 +8,18 @@ $mysqli = conectaBBDD();
  
  $resultadoQuery = $mysqli -> query("SELECT * FROM usuarios WHERE nombreUsuario = '$cajaNombre'AND userPass = '$cajaPassword'");
  
- $numPreguntas = $resultadoQuery -> num_rows;
+ $numUsuarios = $resultadoQuery -> num_rows;
  
 //for ( $i = 0; $i < $numPreguntas; $i++){
 //    $r = $resultadoQuery -> fetch_array();
 //    echo $r['nombreUsuario'] .'<br/>';
 //}
+ 
+ if($numUsuarios > 0){
+     //muestro la pantalla de la aplicación
+     require 'aplicacion.php';
+ }else{
+     //muestro una pantalla de error
+     require 'error.php';
+ }
 
