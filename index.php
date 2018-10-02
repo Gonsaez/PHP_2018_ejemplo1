@@ -53,8 +53,14 @@
         });
 
         $('#boton1').click(function () {
-            console.log("aqui si que llega");
-            $('#cajaNombre').show();
-        })
+             //leo el contenido de las cajas de nombre y contraseña
+            var _cajaNombre = $('#cajaNombre').val();
+            var _cajaPassword = $('#cajaPassword').val();
+            
+            $('#principal').load("login.php",{
+                cajaNombre : _cajaNombre,
+                cajaPassword : _cajaPassword
+            });
+        });
     </script>
 </html>
