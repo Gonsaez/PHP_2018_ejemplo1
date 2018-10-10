@@ -1,3 +1,7 @@
+<?php
+//aqui no hace falta iniciar la sesion porque
+//este código se carga con require
+?>
 <div id="menu" style="color: white">
     <p></p>
     <p><a class="btn btn-block btn-dark disabled">DEMUESTRA QUE ESTAS LISTO PARA LA EVAU</a></p>
@@ -9,13 +13,14 @@
 </div>
 
 <script>
+    var _vidas = 3;
     function sigue(_tema){
         switch (_tema){
-            case '1': $("#menu").load(juego.php, {vidas:3, correctas:0, tema:"Historia"}); break;
-            case '2': $("#menu").load(juego.php, {vidas:3, correctas:0, tema:"Economia"}); break;
-            case '3': $("#menu").load(juego.php, {vidas:3, correctas:0, tema:"Filosofia"}); break;
-            case '4': $("#menu").load(juego.php, {vidas:3, correctas:0, tema:"Lengua"}); break;
-            case '5': $("#menu").load(juego.php, {vidas:3, correctas:0, tema:"Ingles"}); break;
+            case '1': $("#menu").load("juego.php", {vidas:_vidas, correctas:0, tema:"Historia"}); break;
+            case '2': $("#menu").load("juego.php", {vidas:_vidas, correctas:0, tema:"Economia"}); break;
+            case '3': $("#menu").load("juego.php", {vidas:_vidas, correctas:0, tema:"Filosofia"}); break;
+            case '4': $("#menu").load("juego.php", {vidas:_vidas, correctas:0, tema:"Lengua"}); break;
+            case '5': $("#menu").load("juego.php", {vidas:_vidas, correctas:0, tema:"Ingles"}); break;
         }
     }
 </script>
